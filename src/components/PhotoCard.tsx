@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Heart } from "lucide-react";
+import { Heart, CreditCard } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import { likePhoto } from "@/lib/photos.functions";
+import { PaymentDialog } from "@/components/PaymentDialog";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -57,17 +58,30 @@ export function PhotoCard({ photo, className }: { photo: Photo; className?: stri
               Value: <span className="font-medium text-primary">${value.toFixed(2)}</span>
             </p>
           </div>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={handleLike}
-            disabled={isLiking}
-            className="shrink-0 gap-1 rounded-full text-muted-foreground hover:text-secondary"
-            aria-label="Like this cat photo"
-          >
-            <Heart className="h-4 w-4" fill={likes > 0 ? "currentColor" : "none"} />
-            <span className="text-xs">{likes}</span>
-          </Button>
+          <div className="flex shrink-0 items-center gap-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleLike}
+              disabled={isLiking}
+              className="gap-1 rounded-full text-muted-foreground hover:text-secondary"
+              aria-label="Like this cat photo"
+            >
+              <Heart className="h-4 w-4" fill={likes > 0 ? "currentColor" : "none"} />
+              <span className="text-xs">{likes}</span>
+            </Button>
+            <PaymentDialog photo={photo}>
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-1 rounded-full border-primary/30 text-primary hover:bg-primary/10"
+                aria-label="Buy shares in this cat"
+              >
+                <CreditCard className="h-4 w-4" />
+                <span className="text-xs">Buy</span>
+              </Button>
+            </PaymentDialog>
+          </div>
         </div>
       </div>
     </div>
