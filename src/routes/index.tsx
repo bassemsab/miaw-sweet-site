@@ -66,6 +66,9 @@ function HomePage() {
               </Link>
             </Button>
             <Button asChild variant="outline" className="rounded-full border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10">
+              <Link to="/invest">Invest in cats</Link>
+            </Button>
+            <Button asChild variant="ghost" className="rounded-full text-primary-foreground hover:bg-primary-foreground/10">
               <Link to="/gallery">Browse gallery</Link>
             </Button>
           </div>
