@@ -26,6 +26,13 @@ export function Header() {
             Gallery
           </Link>
           <Link
+            to="/invest"
+            activeProps={{ className: "text-primary font-semibold" }}
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Invest
+          </Link>
+          <Link
             to="/upload"
             activeProps={{ className: "text-primary font-semibold" }}
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
