@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Heart } from "lucide-react";
+import { Heart, CreditCard } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import { likePhoto } from "@/lib/photos.functions";
+import { PaymentDialog } from "@/components/PaymentDialog";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
