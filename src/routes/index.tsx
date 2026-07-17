@@ -34,6 +34,8 @@ export const Route = createFileRoute("/")({
     await context.queryClient.ensureQueryData(statsQueryOptions);
     await context.queryClient.ensureQueryData(recentPhotosQueryOptions);
   },
+
+
   component: HomePage,
 });
 
