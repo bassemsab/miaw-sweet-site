@@ -31,14 +31,10 @@ export const Route = createFileRoute("/")({
     links: [{ rel: "canonical", href: "/" }],
   }),
   loader: async ({ context }) => {
-    try {
-      await context.queryClient.ensureQueryData(statsQueryOptions);
-      await context.queryClient.ensureQueryData(recentPhotosQueryOptions);
-    } catch (e) {
-      console.error("[index loader]", e);
-      throw e;
-    }
+    await context.queryClient.ensureQueryData(statsQueryOptions);
+    await context.queryClient.ensureQueryData(recentPhotosQueryOptions);
   },
+
 
   component: HomePage,
 });
